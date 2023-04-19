@@ -68,4 +68,26 @@ const getEventById = async (req: Request, res: Response) => {
   }
 };
 
-export { getAllEvents, createEvent, deleteEvent, getEventById };
+const editEvent = async (req: Request, res: Response) => {
+  try {
+    const eventId = req.params.id;
+    console.log("parsed event ____sdfsdfds_________", eventId);
+
+    const getEvent = await Events.findOne({ _id: eventId });
+
+    const event = await Events.findOneAndUpdate(
+      {
+        _id: eventId,
+      },
+      {
+        ...req.body,
+      }
+    );
+
+    res.send(event);
+  } catch (e) {
+    return res.send(e);
+  }
+};
+
+export { getAllEvents, createEvent, deleteEvent, getEventById, editEvent };

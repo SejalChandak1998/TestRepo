@@ -5,9 +5,11 @@ import { Attendees } from "../pages/attendees";
 import { EventPage } from "../pages/events";
 import { EventForm } from "../pages/events/createEvent";
 import { NotFoundPage } from "../pages/notfound";
+import { AllEvent } from "../pages/public/allEvent";
 import { Contact } from "../pages/public/contact";
 import { CreateEvent } from "../pages/public/createEvent";
 import { EventDetail } from "../pages/public/eventdetails";
+import { EditEventUpdate } from "../pages/public/eventUpdate";
 import { Favorites } from "../pages/public/favorites";
 import { Homepage } from "../pages/public/homepage";
 import { HomepageFooter } from "../pages/public/homepage/footer";
@@ -77,6 +79,26 @@ const allRoutes: RouteObject[] = [
       <>
         <HomepageHeader />
         <MyEvents />
+        <HomepageFooter />
+      </>
+    ),
+  },
+  {
+    path: "/editevent/:id",
+    element: (
+      <>
+        <HomepageHeader />
+        <EditEventUpdate />
+        <HomepageFooter />
+      </>
+    ),
+  },
+  {
+    path: "/allevent",
+    element: (
+      <>
+        <HomepageHeader />
+        <AllEvent />
         <HomepageFooter />
       </>
     ),

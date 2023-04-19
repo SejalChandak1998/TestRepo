@@ -43,6 +43,7 @@ export function HomepageHeader() {
     "Contact US",
     "Favorites",
     "My Events",
+    "All Events",
   ];
 
   const navigate = useNavigate();
@@ -78,6 +79,11 @@ export function HomepageHeader() {
 
       case 6:
         navigate("/myevents");
+        break;
+
+      case 7:
+        navigate("/allevent");
+        break;
     }
   }
 
@@ -109,11 +115,19 @@ export function HomepageHeader() {
           <Box sx={{ display: "flex", position: "absolute", right: 0 }}>
             {headerOptions.map((page, index) => {
               if (isLoggedIn || !!localStorage.getItem("token")) {
-                if (index ==0 || index == 1 ) {
+                if (index == 0 || index == 1) {
                   return;
                 }
               } else {
-                if (index==2 || index == 3 || index == 4||index == 5||index == 6) return;
+                if (
+                  index == 2 ||
+                  index == 3 ||
+                  index == 4 ||
+                  index == 5 ||
+                  index == 6 ||
+                  index == 7
+                )
+                  return;
               }
               return (
                 <Typography
