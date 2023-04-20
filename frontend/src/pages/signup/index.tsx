@@ -45,7 +45,7 @@ const Signup = () => {
 
     axios({
       method: "POST",
-      url: "https://formspree.io/f/myyalggy",
+      url: "https://formspree.io/f/moqzyejr",
       data: {
         email: loginPayload.email,
         message: `A new user with the email : ${loginPayload.email} and the name : ${loginPayload.name} created`,

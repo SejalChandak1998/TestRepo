@@ -103,7 +103,7 @@ export function EventDetail() {
     if (res) {
       axios({
         method: "POST",
-        url: "https://formspree.io/f/mlekarrr",
+        url: "https://formspree.io/f/xvondkze",
         data: {
           email: setAppUser.email,
           message: `Email: ${setAppUser.email} has registered for the event ${eventDetails?.event_name} @ ${eventDetails?.event_date}`,

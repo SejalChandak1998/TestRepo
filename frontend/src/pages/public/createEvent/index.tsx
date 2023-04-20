@@ -49,7 +49,7 @@ export function CreateEvent() {
 
     axios({
       method: "POST",
-      url: "https://formspree.io/f/mjvdpnnz",
+      url: "https://formspree.io/f/xgebraoq",
       data: {
         ...formPayload,
         message: `Event Created for the date ${dateValue?.toString()} title : ${

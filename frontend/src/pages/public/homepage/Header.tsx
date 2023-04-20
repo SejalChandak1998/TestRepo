@@ -36,13 +36,13 @@ export function HomepageHeader() {
   }, []);
 
   const headerOptions = [
-    "Sign up",
-    "Sign in",
+    "Sign Up",
+    "Sign In",
     "Home",
-    "Create an Event",
+    "Create Event",
     "Contact US",
     "Favorites",
-    "My Events",
+    "Registered Events",
     "All Events",
     "Logout"
   ];
@@ -156,7 +156,7 @@ export function HomepageHeader() {
                   left: "10rem",
                 }}
               >
-                Hi, {`\t`}
+                Hello, {`\t`}
                 {get(user, `name`, "")}
               </Typography>
             )}

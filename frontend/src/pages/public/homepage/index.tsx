@@ -25,7 +25,7 @@ export function Homepage() {
     const fetchLocationData = async () => {
       try {
         const response = await axios.get(
-          "https://geo.ipify.org/api/v2/country,city?apiKey=at_6PWVTEUL4p10aDEdXn06xTVdfOblB&ipAddress=140.241.27.22"
+          "https://geo.ipify.org/api/v2/country,city?apiKey=at_aupGz5PEsXT8M7b077WSvB7g9rZ3K&ipAddress=140.241.27.22"
         );
         console.log("response ", response);
         setLocationData(response.data.location.city);

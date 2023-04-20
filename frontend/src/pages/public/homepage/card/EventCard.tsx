@@ -63,7 +63,7 @@ export function HomepageEventCard(props: IHomepageEventCard) {
     if (clientInfo) {
       axios({
         method: "POST",
-        url: "https://formspree.io/f/mlekarrr",
+        url: "https://formspree.io/f/xvondkze",
         data: {
           email: clientInfo.email,
           message: `Email: ${clientInfo.email} has registered for the event ${title} @ ${time}`,
