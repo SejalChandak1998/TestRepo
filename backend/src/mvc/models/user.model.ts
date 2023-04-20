@@ -14,7 +14,7 @@ const schema = CreateSchema({
     type: Array<String>,
     ref: "Event",
     default: [],
-    unique: true,
+    unique: false,
   },
 });
 

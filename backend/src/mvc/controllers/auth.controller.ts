@@ -52,6 +52,7 @@ const UserRegister = (req: Request | any, res: Response) => {
     name: req.body.name,
     email: req.body.email,
     password: req.body.password,
+    confirmpassword: req.body.password,
     created_at: new Date(),
   });
 

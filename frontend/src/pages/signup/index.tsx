@@ -6,6 +6,7 @@ import {
   FormLabel,
   TextField,
   Typography,
+  FormHelperText,
 } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { LoadingButton } from "@mui/lab";
@@ -18,6 +19,7 @@ import { IClient, ICreateClientPayload } from "../../redux/clients/thunk";
 import { FetchUtils } from "../../utils/fetchUtils";
 import { useNavigate } from "react-router-dom";
 import { isLoggedInTrue, setAppUser } from "../../redux/app/reducer";
+
 
 const Signup = () => {
   const [loginPayload, setLoginPayload] = useState({
@@ -66,6 +68,13 @@ const Signup = () => {
       navigate("/");
     }
   }, []);
+
+  const [nameError, setNameError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [confirmPasswordError, setConfirmPasswordError] = useState('');
+  const [passwordError, setPasswordError] = useState("");
+
+
   const handleFormChange = (
     event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
   ) => {
@@ -77,6 +86,32 @@ const Signup = () => {
       ...loginPayload,
       [name]: value,
     });
+    if (name === "name") {
+      if (/\d/.test(value)) {
+        setNameError(true);
+      } else {
+        setNameError(false);
+      }
+    }
+    if (name === "email") {
+      const emailRegex = /\S+@\S+\.\S+/;
+      if (!emailRegex.test(value)) {
+        setEmailError(true);
+      } else {
+        setEmailError(false);
+      }
+    }
+    if (name === "password") {
+      setPasswordError("");
+    }
+  
+    if (name === "confirmpassword") {
+      if (value !== loginPayload.password) {
+        setConfirmPasswordError("Passwords do not match");
+      } else {
+        setConfirmPasswordError("");
+      }
+    }
   };
 
   return (
@@ -110,7 +145,11 @@ const Signup = () => {
                   autoComplete="name"
                   value={loginPayload.name}
                   onChange={handleFormChange}
-                />
+                  error={nameError}
+                  />
+                  {nameError && (
+                    <FormHelperText error>Full Name should not contain numbers</FormHelperText>
+                  )}
               </FormControl>
               <FormControl fullWidth>
                 <FormLabel htmlFor="email">Email</FormLabel>
@@ -123,7 +162,11 @@ const Signup = () => {
                   autoComplete="email"
                   value={loginPayload.email}
                   onChange={handleFormChange}
-                />
+                  error={emailError}
+                  />
+                  {emailError && (
+                    <FormHelperText error>Please enter a valid email address</FormHelperText>
+                  )}
               </FormControl>
               <FormControl fullWidth>
                 <FormLabel htmlFor="password" className="password-label">
@@ -152,8 +195,8 @@ const Signup = () => {
               autoComplete="current-password"
               value={loginPayload.confirmpassword}
               onChange={handleFormChange}
-              error={!passwordsMatch}
-              helperText={!passwordsMatch && 'Passwords do not match'}
+              error={!!confirmPasswordError}
+              helperText={confirmPasswordError}
               />
               </FormControl>
               <FormControl fullWidth>

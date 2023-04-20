@@ -15,6 +15,7 @@ export interface ICreateClientPayload {
   name: string;
   password: string;
   confirmpassword :string;
+  subscribedEvents: string[];
 }
 
 export const getAllClients = createAsyncThunk<IClient[]>(

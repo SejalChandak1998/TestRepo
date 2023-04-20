@@ -38,12 +38,13 @@ export function HomepageHeader() {
   const headerOptions = [
     "Sign up",
     "Sign in",
-    "Logout",
+    "Home",
     "Create an Event",
     "Contact US",
     "Favorites",
     "My Events",
     "All Events",
+    "Logout"
   ];
 
   const navigate = useNavigate();
@@ -55,11 +56,9 @@ export function HomepageHeader() {
       case 1:
         navigate("/signin");
         break;
-
+      
       case 2:
-        localStorage.removeItem("token");
-        dispatch(isLoggedInTrue(false));
-        navigate("/signin");
+        navigate("/");
         break;
 
       case 3:
@@ -84,6 +83,11 @@ export function HomepageHeader() {
       case 7:
         navigate("/allevent");
         break;
+
+      case 8:
+          localStorage.removeItem("token");
+          dispatch(isLoggedInTrue(false));
+          navigate("/signin");
     }
   }
 
@@ -125,7 +129,8 @@ export function HomepageHeader() {
                   index == 4 ||
                   index == 5 ||
                   index == 6 ||
-                  index == 7
+                  index == 7 || 
+                  index == 8 
                 )
                   return;
               }

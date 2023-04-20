@@ -126,7 +126,7 @@ export function HomepageEventCard(props: IHomepageEventCard) {
         >
           <ShareIcon
             onClick={(e) => {
-              window.location.href = "https://wa.me/18572109765?text=This%20is%20the%20link%20for%20the%20event";
+              window.location.href = "https://wa.me/18572109765?text=Thank%20You%20for%20Sharing%20the%20event";
             }}
           />
         </IconButton>

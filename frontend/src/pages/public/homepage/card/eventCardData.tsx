@@ -10,7 +10,7 @@ export interface IHomepageEventCard {
 export const eventCardsData: IHomepageEventCard[] = [
   {
     image:
-      "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F396738279%2F166312578381%2F1%2Foriginal.20221120-053822?w=512&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2160%2C1080&s=25aee39805cf2015a8de751945f1d1d7",
+      "https://musicexistence.s3.amazonaws.com/wp-content/uploads/2020/01/28162630/OIe2FMxw-1024x683.jpeg",
     title: "Event 1",
     time: "2022-05-01 09:00:00",
     followers: "1000",
@@ -20,7 +20,7 @@ export const eventCardsData: IHomepageEventCard[] = [
   },
   {
     image:
-      "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F451974089%2F37309396322%2F1%2Foriginal.20221231-053606?w=512&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C165%2C750%2C375&s=0f74ee75f2cbd6c2cb12bee89d3b9c79",
+      "https://th.bing.com/th/id/OIP.d7ZJRnMNO8QKmgKhK8G9vAHaIr?pid=ImgDet&rs=1",
     title: "Event 2",
     time: "2022-05-15 14:00:00",
     followers: "2000",
